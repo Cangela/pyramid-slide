@@ -4,25 +4,26 @@ function determineHeight(heightStr) {
 
     // TODO 3
     // figure out the height the user typed (replace the "5" below)
-    heightStr = document.getElementById("height").value;
+    //heightStr =
+    heightStr = document.getElementById('height').value;
+    height = parseInt(heightStr);
+    //document.getElementById("pyramid").innerHTML = drawPyramid(height);
 
     // here we convert the string to an int
-    height = parseInt(heightStr);
+    //height = parseInt(heightStr);
 
     // TODO 2
     // draw the pyramid with the given height
+    //drawPyramid(height);
     drawPyramid(height);
 }
-
-
-
 
 function drawPyramid(height) {
 
     // TODO
-    // print that pyramid!sy
+    // print that pyramid!
+    document.getElementById("pyramid").innerHTML = "";
     var symbol = document.getElementById("symbol").value;
-
 
     for (var row = 0; row < height; row++) {
 
@@ -47,30 +48,8 @@ function drawPyramid(height) {
         rowElem.appendChild(textElem);
 
         // insert the paragraph as a child of the container <div>
+
         document.getElementById("pyramid").appendChild(rowElem);
+
         }
-        //console.log(string);
-
-
 }
-
-
-/* function printPrymid(height) {
-    // height is the number of rows. For each row..
-    for (var row = 0; row < height; row++) {
-
-    //figure out how many bricks in this
-    }
-}
-
-function concat(char, count) {
-    str = '';
-    for (var i = 0; i < count; i++){
-        str += char;
-    }
-    return str;
-}
-
-var rowStr = concat(' ', numSpaces) + concat('#', numBricks)
-console.log(rowStr)
-*/
