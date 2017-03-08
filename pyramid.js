@@ -1,29 +1,29 @@
-function determineHeight(heightStr) {
+function findHeightSymbol() {
 
-    // just so we know we're here
-
-    // TODO 3
-    // figure out the height the user typed (replace the "5" below)
-    //heightStr =
+    // figure out the height the user typed
     heightStr = document.getElementById('height').value;
-    height = parseInt(heightStr);
-    //document.getElementById("pyramid").innerHTML = drawPyramid(height);
 
     // here we convert the string to an int
-    //height = parseInt(heightStr);
 
-    // TODO 2
+
+    height = parseInt(heightStr);
+    document.getElementById("rangeHeight").innerHTML = height;
+    var symbol = document.getElementById("symbol").value;
+
+
+
     // draw the pyramid with the given height
-    //drawPyramid(height);
-    drawPyramid(height);
+    drawPyramid(height, symbol);
 }
 
-function drawPyramid(height) {
 
-    // TODO
+function drawPyramid(height, symbol) {
+
     // print that pyramid!
+
+
     document.getElementById("pyramid").innerHTML = "";
-    var symbol = document.getElementById("symbol").value;
+
 
     for (var row = 0; row < height; row++) {
 
@@ -34,21 +34,19 @@ function drawPyramid(height) {
         // build up a string for this row
         var rowStr = "";
         for (var i = 0; i < numSpaces; i++) {
-           rowStr += "\xa0"; // QUIZ: what happens if we use a space (" ") instead of a period?
+           rowStr += "\xa0\xa0";
         }
         for (var i = 0; i < numBricks; i++) {
-
             rowStr += symbol;
         }
 
         textElem = document.createTextNode(rowStr);
 
-        // create a <p> element with the text inside
+               // create a <p> element with the text inside
         rowElem = document.createElement("p");
         rowElem.appendChild(textElem);
 
-        // insert the paragraph as a child of the container <div>
-
+               // insert the paragraph as a child of the container <div>
         document.getElementById("pyramid").appendChild(rowElem);
 
         }
