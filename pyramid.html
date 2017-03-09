@@ -2,15 +2,12 @@
 <html>
 <head>
     <style>
+
         #pyramid {
             line-height: 10px;
             font-size: 30px;
             background-color: #F9F0FF;
             color: #915A91;
-        }
-        .pyramidSlide {
-            color: #FF5E53;
-            border: 5px dashed green;
         }
 
         body {
@@ -20,12 +17,11 @@
 
         #main {
           border: 2px solid #69003E;
-          border-radius: 5px;
-          margin-top: 40px;
-          margin-left: 40px;
-          margin-right: 40px;
-          
-
+          height: 100px;
+          margin-top: 0px;
+          margin-left: 0px;
+          margin-right: 0px;
+          background-color: #EAD6FE;
         }
 
         #height {
@@ -34,27 +30,35 @@
             border-radius: 100%;
         }
 
+        #py {
+            border: 5px solid purple;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+
         #symbol {
             border-radius: 5px;
+            weight: 5px;
         }
 
         header {
-            background-color: #912F92;
+            background-color: #9A86AE;
             color: #ECF0F1;
             font-family: Times;
+            height: 70px;
         }
 
 
     </style>
-</head>
+</head
 <body >
     <header>
     <h1>Pyramid Slide</h1>
     </header>
 
     <br>
-<div id="main">
-    <div class ="pryamidSlide">
+<div id="py">
+    <div id="main">
 
     <label>Brick Symbol: </label>
     <select id="symbol" onchange="findHeightSymbol(this.value)">
@@ -62,11 +66,15 @@
         <option value="@">@</option>
         <option value="X">X</option>
         <option value="$">$</option>
+        <option value="*">*</option>
     </select>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;
 
     <label>How high?</label>
     <input id="height" name="height" type="range" oninput="findHeightSymbol(this.value)" min="0" max="20"/>
     <span id="rangeHeight"></span>
+
 </div>
 
     <br>
@@ -74,7 +82,8 @@
     <br>
 
     <div id="pyramid"></div>
-</div>
+<div>
+
 
     <script src="pyramid.js"></script>
 </body>
