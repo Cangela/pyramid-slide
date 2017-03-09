@@ -4,26 +4,22 @@ function findHeightSymbol() {
     heightStr = document.getElementById('height').value;
 
     // here we convert the string to an int
-
-
     height = parseInt(heightStr);
+
+    //set the range counter equal to the height
     document.getElementById("rangeHeight").innerHTML = height;
+
+    //get the selceted symbol
     var symbol = document.getElementById("symbol").value;
 
-
-
-    // draw the pyramid with the given height
+    // draw the pyramid with the given height and selected symbol
     drawPyramid(height, symbol);
 }
 
-
 function drawPyramid(height, symbol) {
 
-    // print that pyramid!
-
-
+    // print that pyramid!, but first clear out the old one
     document.getElementById("pyramid").innerHTML = "";
-
 
     for (var row = 0; row < height; row++) {
 
@@ -34,7 +30,12 @@ function drawPyramid(height, symbol) {
         // build up a string for this row
         var rowStr = "";
         for (var i = 0; i < numSpaces; i++) {
-           rowStr += "\xa0\xa0";
+            if (symbol == "@")
+                var spaces = "\xa0\xa0\xa0";
+            else {
+                spaces = "\xa0\xa0";
+            }
+            rowStr += spaces
         }
         for (var i = 0; i < numBricks; i++) {
             rowStr += symbol;
